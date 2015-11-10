@@ -25,10 +25,13 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
 
 **Standard DOM event binding**
 
+Note that they don't appear in HTML syntax, since they are bound usen *addEventListener*.
+
     button:
       onClick: -> alert "button clicked!"
       text: 'Me button, me alert'
                         ↓
+    <button>Me button, me alert</button>
     
 **Utilize the full power of general purpose language**
 

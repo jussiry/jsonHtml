@@ -1,4 +1,4 @@
-jsonHtml is for those who favor general purpose languages over domain specific languages, and JSON over XML.
+**jsonHtml** is for those who favor general purpose languages over domain specific languages, and JSON over XML.
 
 It allows you to write HTML directly from JavaScript (or languages that compile to JS), with all the power of
 general purpose language at your hands.

@@ -4,7 +4,7 @@
   "description": "Use JSON syntax to build HTML elements",
   "main": "src/jsonHtml.coffee",
   "jspm": {
-    "main": "src/jsonHtml.coffee
+    "main": "src/jsonHtml.coffee",
     "directories": {},
     "dependencies": {
       "coffee": "github:forresto/system-coffee@^0.1.2"

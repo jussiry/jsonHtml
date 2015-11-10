@@ -26,8 +26,7 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
     </a>
 
 **Standard DOM event binding**
-
-Note that they don't appear in HTML syntax, since they are bound usen *addEventListener*.
+Note that events don't appear in HTML syntax, since they are bound usen *addEventListener*.
 
     button:
       onClick: -> alert "button clicked!"

@@ -1,0 +1,71 @@
+
+<html>
+  <head>
+    <script src="./jspm_packages/system.js"></script>
+    <script src="./config.js"></script>
+    <style>
+      body, h2, h3 {
+        font-family: Arial;
+      }
+      h3 {
+        margin: 10px 0 5px;
+      }
+      #test-container {
+        padding: 10px;
+        background: #ccc;
+        border-radius: 4px;
+        line-height: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Performance comparison</h2>
+
+    <h3>first - HTML string</h3>
+    <p>For a baseline, there is a template created as a string and inserted to elements 'innerHTML'<p>
+    <pre>
+  div.innerHTML = """
+    &lt;div id="foo"&gt;
+      &lt;button class="bar"&gt;
+        &lt;a href="http://jussir.net/#/edit/jsonHtmlTest"&gt;self reference&lt;/a&gt;
+      &lt;/button&gt;
+      &lt;div&gt;foo bar baz&lt;/div&gt;
+    &lt;/div&gt;
+  """
+    </pre>
+
+    <h3>second - jsonHtml</h3>
+    <p>Same HTML tree in object syntax<p>
+    <pre>
+  'div#foo':
+    'button.bar':
+      a:
+        href:"http://jussir.net/#/edit/jsonHtmlTest"
+        text: 'self reference'
+    div: "foo bar baz"
+    </pre>
+
+    <h3>third - CoffeeKup</h3>
+    <p>And finally in function syntax. CoffeeKup is precompiled to template - without precompiling it would be about 25 times slower.<p>
+    <pre>
+  div '#foo', ->
+    button '.bar', ->
+      a
+        href:"http://jussir.net/#/edit/jsonHtmlTest",
+        'self reference'
+    div "foo bar baz"
+    </pre>
+
+    <pre id="test-container">Tests running...</pre>
+
+    <h3>TODO</h3>
+
+    <p>CoffeeKup is old, find other templating libs to compare to.</p>
+
+    <div id="test-coffeekup"></div>
+    <script>
+      System.import('./test/performance.coffee!');
+    </script>
+  </body>
+</html>

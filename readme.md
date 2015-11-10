@@ -25,7 +25,7 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
       <span>Click me!</span>
     </a>
 
-**Standard DOM event binding**
+**Standard DOM event binding**<br/>
 Note that events don't appear in HTML syntax, since they are bound usen *addEventListener*.
 
     button:

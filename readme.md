@@ -4,11 +4,11 @@ It allows you to write HTML directly from JavaScript (or languages that compile 
 general purpose language at your hands.
 
 
-### Syntax
+## Syntax
 
 Most of the examples here are written on CoffeScript, since, well, it has prettier JSON syntax.
 
-#### querySelector syntax for creating id's and class'es
+*querySelector syntax for creating id's and class'es*
 
     'p #someId .classA .classB': "Some paragraph here"
                         ↓

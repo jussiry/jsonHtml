@@ -8,7 +8,7 @@ general purpose language at your hands.
 
 Most of the examples here are written on CoffeScript, since, well, it has prettier JSON syntax.
 
-**jQuery/querySelector syntax for creating id's and class'es**
+**jQuery / querySelector syntax for creating id's and class'es**
 
     'p #someId .classA .classB': "Some paragraph here"
                         ↓

@@ -9,7 +9,7 @@
       "coffee": "github:forresto/system-coffee@^0.1.2"
     },
     "devDependencies": {}
-  }
+  },
   "scripts": {
     "build-dev":"",
     "build":""

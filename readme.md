@@ -1,6 +1,3 @@
-
-### jsonHtml
-
 jsonHtml is for those who favor general purpose languages over domain specific languages, and JSON over XML.
 
 It allows you to write HTML directly from JavaScript (or languages that compile to JS), with all the power of
@@ -14,6 +11,8 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
 ### querySelector syntax for creating id's and class'es
 
     'p #someId .classA .classB': "Some paragraph here"
+                        ↓
+    <p id="someId" class="classA classB">Some paragraph here</p>
 
 ### automatic attribute detection
 
@@ -21,13 +20,14 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
       href: "http://jussir.net/#/edit/jsonHtmlExample"
       target: '_blank'
       text: 'Click me!'
-
+                        ↓
+    <a href="http://jussir.net/#/edit/jsonHtmlExample" target="_blank">Click me!</a>
 ### standard DOM event binding
 
     button:
       onClick: -> alert "button clicked!"
       text: 'Me button, me alert'
-
+    
 ### utilize the full power of general purpose language
 
     ul:
@@ -61,8 +61,8 @@ can be browsed here: http://jussir.net/#/edit/react_from_obj
 
 ### Basic DOM
 
-- CoffeeKup[http://coffeekup.org/]
+- (CoffeeKup)[http://coffeekup.org/]
 
 ### Virtual DOM / React
 
-- react-no-jsx[https://github.com/jussi-kalliokoski/react-no-jsx]
+- (react-no-jsx)[https://github.com/jussi-kalliokoski/react-no-jsx]

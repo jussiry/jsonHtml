@@ -11,30 +11,30 @@ general purpose language at your hands.
 
 Most of the examples here are written on CoffeScript, since, well, it has prettier JSON syntax.
 
-# querySelector syntax for creating id's and class'es
+### querySelector syntax for creating id's and class'es
 
     'p #someId .classA .classB': "Some paragraph here"
 
-# automatic attribute detection
+### automatic attribute detection
 
     a:
       href: "http://jussir.net/#/edit/jsonHtmlExample"
       target: '_blank'
       text: 'Click me!'
 
-# standard DOM event binding
+### standard DOM event binding
 
     button:
       onClick: -> alert "button clicked!"
       text: 'Me button, me alert'
 
-# utilize the full power of general purpose language
+### utilize the full power of general purpose language
 
     ul:
       for key, val of { a: 'foo', b: 'bar', c: 'baz' }
         "li .#{key}": val
 
-# JavaScript example (ES6)
+### JavaScript example (ES6)
 
     {
       ul: ['item1','item2','item3'].map( el => { li: el} )
@@ -45,13 +45,13 @@ For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHt
 
 ## See also
 
-# jsonStyles
+### jsonStyles
 
 For full power, use similar syntax to create styles. Githup repo to be added.
 For now you can play with it here: http://jussir.net/#/edit/jsonHtmlStyleExample
 And source can be found here: http://jussir.net/#/edit/coffee_styles
 
-# jsonReact
+### jsonReact
 
 Same syntax to create React's virtual DOM. Github repository not yet done, source
 can be browsed here: http://jussir.net/#/edit/react_from_obj
@@ -59,10 +59,10 @@ can be browsed here: http://jussir.net/#/edit/react_from_obj
 
 ## Alternative libraries
 
-# Basic DOM
+### Basic DOM
 
 - CoffeeKup[http://coffeekup.org/]
 
-# Virtual DOM / React
+### Virtual DOM / React
 
 - react-no-jsx[https://github.com/jussi-kalliokoski/react-no-jsx]

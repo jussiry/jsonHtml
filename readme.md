@@ -8,13 +8,13 @@ general purpose language at your hands.
 
 Most of the examples here are written on CoffeScript, since, well, it has prettier JSON syntax.
 
-*querySelector syntax for creating id's and class'es*
+**querySelector syntax for creating id's and class'es**
 
     'p #someId .classA .classB': "Some paragraph here"
                         ↓
     <p id="someId" class="classA classB">Some paragraph here</p>
 
-#### automatic attribute detection
+**automatic attribute detection**
 
     a:
       href: "http://jussir.net/#/edit/jsonHtmlExample"
@@ -22,7 +22,8 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
       text: 'Click me!'
                         ↓
     <a href="http://jussir.net/#/edit/jsonHtmlExample" target="_blank">Click me!</a>
-#### standard DOM event binding
+
+**standard DOM event binding**
 
     button:
       onClick: -> alert "button clicked!"
@@ -43,7 +44,7 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
 For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHtmlExample
 
 
-### See also
+## See also
 
 #### jsonStyles
 
@@ -57,7 +58,7 @@ Same syntax to create React's virtual DOM. Github repository not yet done, sourc
 can be browsed [here](http://jussir.net/#/edit/react_from_obj).
 
 
-### Alternative libraries
+## Alternative libraries
 
 #### Basic DOM
 

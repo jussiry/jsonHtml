@@ -19,9 +19,11 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
     a:
       href: "http://jussir.net/#/edit/jsonHtmlExample"
       target: '_blank'
-      text: 'Click me!'
+      span: 'Click me!'
                         ↓
-    <a href="http://jussir.net/#/edit/jsonHtmlExample" target="_blank">Click me!</a>
+    <a href="http://jussir.net/#/edit/jsonHtmlExample" target="_blank">
+      <span>Click me!</span>
+    </a>
 
 **Standard DOM event binding**
 

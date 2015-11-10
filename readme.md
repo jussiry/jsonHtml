@@ -77,7 +77,7 @@ can be browsed [here](http://jussir.net/#/edit/react_from_obj).
 
 - [CoffeeKup](http://coffeekup.org/)
 - ...
-- 
+
 **Virtual DOM / React**
 
 - [react-no-jsx](https://github.com/jussi-kalliokoski/react-no-jsx)

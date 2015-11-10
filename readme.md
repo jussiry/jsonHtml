@@ -49,12 +49,12 @@ For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHt
 
 For full power, use similar syntax to create styles. Githup repo to be added.
 For now you can play with it here: http://jussir.net/#/edit/jsonHtmlStyleExample
-And source can be found here: http://jussir.net/#/edit/coffee_styles
+And source can be found [here](http://jussir.net/#/edit/coffee_styles).
 
 ### jsonReact
 
 Same syntax to create React's virtual DOM. Github repository not yet done, source
-can be browsed here: http://jussir.net/#/edit/react_from_obj
+can be browsed [here](http://jussir.net/#/edit/react_from_obj).
 
 
 ## Alternative libraries
@@ -65,4 +65,4 @@ can be browsed here: http://jussir.net/#/edit/react_from_obj
 
 ### Virtual DOM / React
 
-- react-no-jsx(https://github.com/jussi-kalliokoski/react-no-jsx)
+- [react-no-jsx](https://github.com/jussi-kalliokoski/react-no-jsx)

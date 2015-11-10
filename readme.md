@@ -14,7 +14,7 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
                         ↓
     <p id="someId" class="classA classB">Some paragraph here</p>
 
-**automatic attribute detection**
+**Automatic attribute detection**
 
     a:
       href: "http://jussir.net/#/edit/jsonHtmlExample"
@@ -23,24 +23,37 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
                         ↓
     <a href="http://jussir.net/#/edit/jsonHtmlExample" target="_blank">Click me!</a>
 
-**standard DOM event binding**
+**Standard DOM event binding**
 
     button:
       onClick: -> alert "button clicked!"
       text: 'Me button, me alert'
+                        ↓
     
-**utilize the full power of general purpose language**
+**Utilize the full power of general purpose language**
 
     ul:
       for key, val of { a: 'foo', b: 'bar', c: 'baz' }
         "li .#{key}": val
+                        ↓
+    <ul>
+      <li class="a">foo</li>
+      <li class="b">bar</li>
+      <li class="c">baz</li>
+    </ul>
 
 **JavaScript example (ES6)**
 
     {
       ul: ['item1','item2','item3'].map( el => { li: el} )
     }
-
+                        ↓
+    <ul>
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+    </ul>
+    
 For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHtmlExample
 
 

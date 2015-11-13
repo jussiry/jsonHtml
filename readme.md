@@ -14,7 +14,7 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
                         ↓
     <p id="someId" class="classA classB">Some paragraph here</p>
 
-**Automatic attribute detection**
+**Automatic attribute and tag detection**
 
     a:
       href: "http://jussir.net/#/edit/jsonHtmlExample"

@@ -33,7 +33,7 @@ Note that events don't appear in HTML-syntax, since they are bound using *addEve
       text: 'Me button, me alert'
                         ↓
     <button>Me button, me alert</button>
-    
+
 **Utilize the full power of general purpose language**
 
     ul:
@@ -57,8 +57,20 @@ Note that events don't appear in HTML-syntax, since they are bound using *addEve
       <li>item2</li>
       <li>item3</li>
     </ul>
-    
+
 For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHtmlExample
+
+
+## Install
+
+**JSPM**
+
+    jspm install github:jussiry/jsonHtml
+
+**Webpack / browserify?**
+
+
+**TODO /dist**
 
 
 ## See also

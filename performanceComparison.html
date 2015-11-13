@@ -31,6 +31,10 @@
         &lt;a href="http://jussir.net/#/edit/jsonHtmlTest"&gt;self reference&lt;/a&gt;
       &lt;/button&gt;
       &lt;div&gt;foo bar baz&lt;/div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+      &lt;/ul&gt;
     &lt;/div&gt;
   """
     </pre>
@@ -44,6 +48,9 @@
         href:"http://jussir.net/#/edit/jsonHtmlTest"
         text: 'self reference'
     div: "foo bar baz"
+    ul:
+      for i in [1,2]
+        li: i
     </pre>
 
     <h3>third - CoffeeKup</h3>
@@ -55,6 +62,10 @@
         href:"http://jussir.net/#/edit/jsonHtmlTest",
         'self reference'
     div "foo bar baz"
+    ul ->
+      for i in [1,2]
+        li(i)
+
     </pre>
 
     <pre id="test-container">Tests running...</pre>

@@ -79,9 +79,8 @@ http://jussir.net/#/edit/jsonHtml
 
 **jsonStyles**
 
-For full power, use similar syntax to create styles. Githup repo to be added.
-For now you can play with it [here](http://jussir.net/#/edit/jsonHtmlStyleExample).
-And source can be found [here](http://jussir.net/#/edit/coffee_styles).
+For full power, use similar syntax styles: [jsonCss](https://github.com/jussiry/jsoncss).
+See also [example project](https://github.com/jussiry/jsonHtmlCssExample) that combines jsonHtml and jsonCss.
 
 **jsonReact**
 

@@ -12,6 +12,8 @@
     "devDependencies": {}
   },
   "scripts": {
-    "build": "coffee -c -o ./dist src/jsonHtml.coffee"
+    "build-dev": "coffee -c -o ./dist src/jsonHtml.coffee",
+    "minify": "uglifyjs ./dist/jsonHtml.js --compress --mangle -o ./dist/jsonHtml.min.js --source-map ./dist/jsonHtml.min.js.map",
+    "build": "npm run build-dev && npm run minify"
   }
 }

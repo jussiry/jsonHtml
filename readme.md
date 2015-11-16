@@ -63,17 +63,11 @@ For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHt
 
 ## Install
 
-**JSPM**
+Just import dist/jsonHtml.min.js
 
-    jspm install github:jussiry/jsonHtml
+Library uses CommonJS syntax for export, or global.jsonHtml when local 'module' variable not defined.
 
-**Webpack / browserify?**
-
-
-
-**global**
-
-If you don't use any import syntax, you can also include jsonHtml globally from /dist/jsonHtml.js
+With JSPM, you can install it directly: jspm install github:jussiry/jsonHtml
 
 
 ## "Source" and more tests

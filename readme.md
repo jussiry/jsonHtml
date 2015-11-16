@@ -70,7 +70,15 @@ For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHt
 **Webpack / browserify?**
 
 
-**TODO /dist**
+
+**global**
+
+If you don't use any import syntax, you can also include jsonHtml globally from /dist/jsonHtml.js
+
+
+## "Source" and more tests
+
+http://jussir.net/#/edit/jsonHtml
 
 
 ## See also

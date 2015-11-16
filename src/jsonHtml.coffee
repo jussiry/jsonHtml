@@ -1,3 +1,15 @@
+# Export in module.exports, this, or global.jsonHtml
+
+globalRef = window ? global
+
+if (module? and module isnt globalRef.module)
+  module.exports = jsonHtml = {}
+else if @ is globalRef
+  @jsonHtml = jsonHtml = {}
+else
+  jsonHtml = @
+
+
 # HELPERS
 
 merge = (first, rest...)->
@@ -10,37 +22,45 @@ dasherize = (str)->
   str.replace /[A-Z]/g, (match,ind)->
     (if ind isnt 0 then '-' else '') + match.toLowerCase()
 
-# ACTIONS
+# COMMON ACTIONS
 
 setAttribute = (attrName, attrVal, node)-> node.setAttribute attrName, attrVal
-bindEvent    = (attrName, attrVal, node)-> node.addEventListener attrName.toLowerCase()[2..], attrVal, false
 
 createElementAndIterateChildren = (key, subVal, node)->
   tag = create_html_node key
   iterate tag, subVal
   node.appendChild tag
 
-# ACTION MAPS
+# ACTION MAP
 
+allActionsMap = {} #merge {}, tagsMap, eventAttrsMap, specialActionsMap
+
+jsonHtml.addActions = (actionsMap)-> # key: action
+  merge allActionsMap, actionsMap
+
+# ACTION 'PLUGINS'
+
+# make most common tags work also in lowercase
 tagsMap = {}
 for tagName in @commonTags = ['a', 'body', 'br', 'button', 'canvas', 'div', 'em', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'html', 'iframe', 'img', 'input', 'li', 'ol', 'p', 'pre', 'script', 'span', 'strong', 'table', 'td', 'textarea', 'th', 'tr', 'ul']
   tagsMap[tagName] = createElementAndIterateChildren
+jsonHtml.addActions tagsMap
 
+# bind starndard DOM events
+bindEvent    = (attrName, attrVal, node)-> node.addEventListener attrName.toLowerCase()[2..], attrVal, false
 eventAttrsMap = {}
 for eventName in @eventAttrs = ['onKeyDown','onKeyUp','onKeyPress', 'onClick','onDoubleClick',
                                 'onChange','onInput','onSubmit',  'onBlur','onFocus',
                                 'onMouseEnter','onMouseLeave','onMouseMove','onMouseOut','onMouseOver',  'onMouseDown','onMouseUp',
                                 'onDragEnter','onDragExit','onDragLeave','onDragOver','onDrag','onDragEnd','onDragStart','onDrop']
   eventAttrsMap[eventName] = bindEvent
+jsonHtml.addActions eventAttrsMap
 
-specialActionsMap =
+# raw html, textNode, iterate content to parent:
+jsonHtml.addActions
   RAW:  (attrName, attrVal, node)-> node.innerHTML   = attrVal
   text: (attrName, attrVal, node)-> node.textContent = attrVal
-
-allActionsMap = merge {}, tagsMap, eventAttrsMap, specialActionsMap
-
-@addSpecialActions = (actionsMap)-> # key: action
-  merge allActionsMap, actionsMap
+  me:   (attrName, attrVal, node)-> iterate node, attrVal
 
 
 # PARSER
@@ -59,7 +79,6 @@ create_html_node = (sKey)->
     el.setAttribute 'class', classesMatch.map((cStr)-> cStr[1..-1]).join ' '
   el
 
-
 stackDepth = 0
 iterate = (node, val)->
   unless node instanceof Node
@@ -69,7 +88,7 @@ iterate = (node, val)->
     stackDepth = 0
     throw "jsonHtml stack depth > 100; endless loop?"
   stackDepth++
-  val = val() if typeof val is 'function'
+  val = val(node) if typeof val is 'function'
   if val instanceof Array
     for subVal in val
       (iterate node, subVal) #, data
@@ -89,7 +108,7 @@ iterate = (node, val)->
   stackDepth--
   return node
 
-@parse = (tmplObj, rootNode)->
+jsonHtml.parse = (tmplObj, rootNode)->
   # start iteration with empty rootNode
   rootNode ?= document.createDocumentFragment()
   iterate rootNode, tmplObj

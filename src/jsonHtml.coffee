@@ -3,7 +3,9 @@
 globalRef = window ? global
 
 if (module? and module isnt globalRef.module)
-  module.exports = jsonHtml = {}
+  module.exports = module.exports or {}
+  module.exports.__esModule = true # exports subvars, not whole module
+  jsonHtml = module.exports
 else if @ is globalRef
   @jsonHtml = jsonHtml = {}
 else

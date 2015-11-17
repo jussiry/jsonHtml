@@ -1,7 +1,7 @@
-**jsonHtml** is for those who favor general purpose languages over domain specific languages, and JSON over XML.
+**jsonHtml** is templating library for those who favor general purpose languages over domain specific languages, and JSON over XML.
 
 It allows you to write HTML directly from JavaScript (or languages that compile to JS), with all the power of
-general purpose language at your hands.
+general purpose language at your hands. See also sister library: [jsonCss](https://github.com/jussiry/jsoncss)
 
 
 ## Syntax
@@ -10,7 +10,7 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
 
 **jQuery / querySelector syntax for creating id's and class'es**
 
-    'p #someId .classA .classB': "Some paragraph here"
+    { 'p #someId .classA .classB': "Some paragraph here" }
                         ↓
     <p id="someId" class="classA classB">Some paragraph here</p>
 
@@ -29,7 +29,7 @@ Most of the examples here are written on CoffeScript, since, well, it has pretti
 Note that events don't appear in HTML-syntax, since they are bound using *addEventListener*.
 
     button:
-      onClick: -> alert "button clicked!"
+      onClick: => alert "button clicked!"
       text: 'Me button, me alert'
                         ↓
     <button>Me button, me alert</button>
@@ -46,10 +46,12 @@ Note that events don't appear in HTML-syntax, since they are bound using *addEve
       <li class="c">baz</li>
     </ul>
 
-**JavaScript example (ES6)**
+**Loops with JavaScript (ES6)**
 
     {
-      ul: ['item1','item2','item3'].map( el => { li: el} )
+      ul: ['item1','item2','item3'].map( el => {
+        li: el
+      })
     }
                         ↓
     <ul>
@@ -77,9 +79,9 @@ http://jussir.net/#/edit/jsonHtml
 
 ## See also
 
-**jsonStyles**
+**jsonCss**
 
-For full power, use similar syntax styles: [jsonCss](https://github.com/jussiry/jsoncss).
+For full power, use similar syntax for styles: [jsonCss](https://github.com/jussiry/jsoncss).
 See also [example project](https://github.com/jussiry/jsonHtmlCssExample) that combines jsonHtml and jsonCss.
 
 **jsonReact**

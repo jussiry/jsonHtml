@@ -7,9 +7,14 @@
     "main": "dist/jsonHtml.min.js",
     "directories": {},
     "dependencies": {
-      "coffee": "github:forresto/system-coffee@^0.1.2"
+      "coffee": "github:forresto/system-coffee@^0.1.2",
+      "jquery": "github:components/jquery@^2.1.4"
     },
-    "devDependencies": {}
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
   },
   "scripts": {
     "build-dev": "coffee -c -o ./dist src/jsonHtml.coffee",

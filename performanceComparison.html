@@ -22,21 +22,13 @@
   <body>
     <h2>Performance comparison</h2>
 
+    <p>Performance comparison can be highly misleading, since they warry so much between the parsed template and inpu data.
+       But here's an attempt anyway.</p>
+
     <h3>first - HTML string</h3>
     <p>For a baseline, there is a template created as a string and inserted to elements 'innerHTML'<p>
-    <pre>
-  div.innerHTML = """
-    &lt;div id="foo"&gt;
-      &lt;button class="bar"&gt;
-        &lt;a href="http://jussir.net/#/edit/jsonHtmlTest"&gt;self reference&lt;/a&gt;
-      &lt;/button&gt;
-      &lt;div&gt;foo bar baz&lt;/div&gt;
-      &lt;ul&gt;
-        &lt;li&gt;1&lt;/li&gt;
-        &lt;li&gt;2&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  """
+    <pre id="innerHtml">
+
     </pre>
 
     <h3>second - jsonHtml</h3>

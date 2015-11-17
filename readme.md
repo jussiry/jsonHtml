@@ -82,7 +82,7 @@ http://jussir.net/#/edit/jsonHtml
 **jsonCss**
 
 For full power, use similar syntax for styles: [jsonCss](https://github.com/jussiry/jsoncss).
-See also [example project](https://github.com/jussiry/jsonHtmlCssExample) that combines jsonHtml and jsonCss.
+See this [example project](https://github.com/jussiry/jsonHtmlCssExample) on how to combine them.
 
 **jsonReact**
 

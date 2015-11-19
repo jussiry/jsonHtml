@@ -1,7 +1,6 @@
 # Export in module.exports, this, or global.jsonHtml
 
 globalRef = window ? global
-
 if (module? and module isnt globalRef.module)
   module.exports = module.exports or {}
   module.exports.__esModule = true # exports subvars, not whole module
@@ -10,7 +9,6 @@ else if @ is globalRef
   @jsonHtml = jsonHtml = {}
 else
   jsonHtml = @
-
 
 # HELPERS
 
@@ -30,7 +28,7 @@ setAttribute = (attrName, attrVal, node)-> node.setAttribute attrName, attrVal
 
 createElementAndIterateChildren = (key, subVal, node)->
   tag = create_html_node key
-  iterate tag, subVal
+  transpile tag, subVal
   node.appendChild tag
 
 # ACTION MAP
@@ -58,11 +56,11 @@ for eventName in @eventAttrs = ['onKeyDown','onKeyUp','onKeyPress', 'onClick','o
   eventAttrsMap[eventName] = bindEvent
 jsonHtml.addActions eventAttrsMap
 
-# raw html, textNode, iterate content to parent:
+# raw html, textNode, transpile content to parent:
 jsonHtml.addActions
   RAW:  (attrName, attrVal, node)-> node.innerHTML   = attrVal
   text: (attrName, attrVal, node)-> node.textContent = attrVal
-  me:   (attrName, attrVal, node)-> iterate node, attrVal
+  me:   (attrName, attrVal, node)-> transpile node, attrVal
 
 
 # PARSER
@@ -82,7 +80,7 @@ create_html_node = (sKey)->
   el
 
 stackDepth = 0
-iterate = (node, val)->
+transpile = (node, val)->
   unless node instanceof Node
     throw Error "Illegal object in \:jsonHtml"
   return node unless val?
@@ -93,7 +91,7 @@ iterate = (node, val)->
   val = val(node) if typeof val is 'function'
   if val instanceof Array
     for subVal in val
-      (iterate node, subVal) #, data
+      (transpile node, subVal) #, data
   else if val instanceof Node
     node.appendChild val
   else if typeof val is 'object'
@@ -110,7 +108,7 @@ iterate = (node, val)->
   stackDepth--
   return node
 
-jsonHtml.parse = (tmplObj, rootNode)->
+jsonHtml.createNode = (tmplObj, rootNode)->
   # start iteration with empty rootNode
   rootNode ?= document.createDocumentFragment()
-  iterate rootNode, tmplObj
+  transpile rootNode, tmplObj

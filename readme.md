@@ -67,9 +67,9 @@ For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHt
 
 Just import dist/jsonHtml.min.js
 
-Library uses CommonJS syntax for export, or global.jsonHtml when local 'module' variable not defined.
+Library uses CommonJS syntax for export, or `window.jsonHtml` when local 'module' variable not defined.
 
-With JSPM, you can install it directly: jspm install github:jussiry/jsonHtml
+With JSPM, you can install it directly: `jspm install github:jussiry/jsonHtml`
 
 
 ## "Source" and more tests

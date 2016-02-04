@@ -72,11 +72,6 @@ Library uses CommonJS syntax for export, or `window.jsonHtml` when local 'module
 With JSPM, you can install it directly: `jspm install github:jussiry/jsonHtml`
 
 
-## "Source" and more tests
-
-http://jussir.net/#/edit/jsonHtml
-
-
 ## See also
 
 **jsonCss**

@@ -61,7 +61,7 @@ Note that events don't appear in HTML-syntax, since they are bound using *addEve
     </ul>
 
 
-## More examples
+### More examples
 
 http://jussir.net/#/edit/jsonHtmlExample
 

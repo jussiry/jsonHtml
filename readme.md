@@ -60,7 +60,10 @@ Note that events don't appear in HTML-syntax, since they are bound using *addEve
       <li>item3</li>
     </ul>
 
-For more examples, go play with the syntax here: http://jussir.net/#/edit/jsonHtmlExample
+
+## More examples
+
+http://jussir.net/#/edit/jsonHtmlExample
 
 
 ## Install
